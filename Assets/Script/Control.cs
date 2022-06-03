@@ -5,7 +5,6 @@ using UnityEngine;
 public class Control : MonoBehaviour
 {
     public float speed = 1;
-    public float rotation = 1;
     public float vertical;
     public float horizonal;
 
@@ -18,9 +17,9 @@ public class Control : MonoBehaviour
 
     public void Move()
     {
-        float nextSpeed = speed * Time.deltaTime;
-        transform.Translate(vertical * nextSpeed, 0, horizonal * nextSpeed);
-        ActiveAnimation();
+        float normalSpeed = speed * Time.deltaTime;
+        transform.Translate(horizonal * normalSpeed, 0, vertical * normalSpeed);
+        //ActiveAnimation();
     }
 
     public void ActiveAnimation()
